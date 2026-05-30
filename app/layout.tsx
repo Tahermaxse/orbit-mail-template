@@ -2,6 +2,7 @@ import { ClientProviders } from '@/providers/client-providers';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { siteConfig } from '@/lib/site-config';
 import type { PropsWithChildren } from 'react';
+import { Suspense } from 'react';
 import type { Viewport } from 'next';
 import { cn } from '@/lib/utils';
 import './globals.css';
@@ -29,7 +30,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
   return (
     <html suppressHydrationWarning>
       <body className={cn(geistSans.variable, geistMono.variable, 'antialiased')}>
-        <ClientProviders>{children}</ClientProviders>
+        <Suspense>
+          <ClientProviders>{children}</ClientProviders>
+        </Suspense>
       </body>
     </html>
   );
