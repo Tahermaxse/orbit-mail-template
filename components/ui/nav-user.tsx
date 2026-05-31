@@ -321,7 +321,14 @@ export function NavUser() {
               ) : (
                 <div className="flex cursor-pointer items-center">
                   <div className="relative">
-                    <div className="bg-muted size-7 animate-pulse rounded-[5px]" />
+                      <Avatar className="size-7 rounded-[5px]">
+                      
+                       <AvatarImage
+                          className="rounded-[5px]"
+                          src="https://avatars.githubusercontent.com/u/138603168?v=4"
+                        />
+                     
+                    </Avatar>
                   </div>
                 </div>
               )}
